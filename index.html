@@ -3,9 +3,8 @@
 <head>
   <script src="jquery-2.0.3.min.js"></script>
   <script>
-  var origin = location.protocol + location.hostname + '/';
+  var origin = location.protocol + '//' + location.hostname + '/';
   $(function(){
-  	console.log(location);
   	$('#header').load(origin + "header.html");
   });
   </script>
