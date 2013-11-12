@@ -1,18 +1,215 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="jquery-2.0.3.min.js"></script>
+  <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+  <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href='http://fonts.googleapis.com/css?family=Damion' rel='stylesheet' type='text/css'>
   <script>
   var origin = location.protocol + '//' + location.hostname + '/';
   $(function(){
-  	$('#header').load(origin + "header.html");
+    $('#header').load(origin + "header.html");
+    $('#footer').load(origin + "footer.html");
   });
   </script>
+  <style type="text/css">
+  * {
+    font-family: Helvetica;
+  }
+
+  #header .navbar-inner {
+    background-image: none;
+    background: rgba(0,0,0,0.5);
+    color:white;
+    border-width: 0;
+  }
+  .container-fluid {
+    padding-left:0;
+    padding-right:0;
+    width:100%;
+  }
+  .logo {
+    float:left;
+    margin-left: 40px;
+  }
+  a.intro-btn {
+    width:150px;
+    height:36px;
+    padding: 10px 20px;
+    margin-top: 10px;
+    margin-right:30px;
+    background: #5BABB8;
+    color: #FFF;
+    text-decoration: none;
+    border-radius: 2px;
+    letter-spacing: 2px;
+    line-height: 36px;
+    white-space: nowrap;
+  }
+  a.intro-btn:hover {
+    box-shadow:inset 0px 0px 0px 3px #FFF;
+  }
+  #footer {
+    padding: 10px 50px;
+    text-align: center;
+    color:#DDDDDD;
+    background: #353535;
+  }
+  .title {
+    font-family: 'Damion', cursive;
+    font-weight: 1000;
+    font-size: 70px;
+    color: #FFFFFF;
+    text-shadow: 5px 5px 5px #222;
+    letter-spacing: 3px;
+    margin-bottom: 7px;
+    line-height:60px;
+  }
+  .subtitle {
+    color: #DDDDDD;
+    letter-spacing: 2px;
+    margin-bottom:20px;
+  }
+  .intro-text {
+    margin-top:300px;
+    text-align: center;
+    top:50%;
+  }
+  .intro-strip {
+    height:800px;
+    background: #F3832B; 
+  }
+  .work-strip {
+    height: 600px;
+    background: #FFF;
+  }
+  .nav.pull-right img {
+    transition: opacity 0.5s;
+    opacity: 0.5;
+  }
+  .nav.pull-right img:hover {
+    transition: opacity 0.5s;
+    opacity: 1;
+  }
+  .project {
+    width:50%;
+    position:relative;
+    float:left;
+  }
+  .project:after {
+    padding-top: 56%;
+    display: block;
+    content: '';
+  }
+  .cover {
+    width:100%;
+    height:100%;
+    position: absolute;
+  }
+  .webdnd-cover {
+    background:#000;
+    opacity:0;
+    transition: opacity 0.3s;
+  }
+  .webdnd-cover:hover {
+    opacity:0.5;
+    transition: opacity 0.3s;
+  }
+  .talend-cover {
+    background:#000;
+    opacity:0;
+    transition: opacity 0.3s;
+  }
+  .talend-cover:hover {
+    opacity:0.5;
+    transition: opacity 0.3s;
+  }
+  .scheduler-cover {
+    background:#000;
+    opacity:0;
+    transition: opacity 0.3s;
+  }
+  .scheduler-cover:hover {
+    opacity:0.5;
+    transition: opacity 0.3s;
+  }
+  .radial-cover {
+    background:#000;
+    opacity:0;
+    transition: opacity 0.3s;
+  }
+  .radial-cover:hover {
+    opacity:0.5;
+    transition: opacity 0.3s;
+  }
+  .talend {
+    background-image: url(img/talend_box.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .webdnd {
+    background-image: url(img/icosahedron_box.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .radial {
+    background-image: url(img/radial_box.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .scheduler {
+    background-image: url(img/clock_box.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .project-title {
+    position: absolute;
+    padding-left: 5%;
+    padding-top: 2%;
+    font-weight: bold;
+    color:white;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  </style>
 </head>
 <body>
 
-<div id="header"></div>
-<h1>Anton Pravdin</h1>
+  <div id="header"></div>
+  <div class="container-fluid">
+    <div class=" intro-strip row-fluid">
+      <div class="intro-text">
+        <p class="title">Anton Pravdin</p>
+        <p class="subtitle">Web Developer | Back-end Developer | Web Designer</p>
+        <a href="contact.html" class="intro-btn">Hire Now</a>
+        <a href="#work-strip" class="intro-btn">Recent Projects</a>
+        
+      </div>
+    </div>
+    <div id="work-strip" class="work-strip row-fluid">
+        <div class="project webdnd">
+          <div class="webdnd-cover cover">
+            <p class="project-title">WebDND Project</p>
+          </div>
+        </div>
+        <div class="project talend">
+          <div class="talend-cover cover">
+            <p class="project-title">Talend Project</p>
+          </div>
+        </div>
+        <div class="project scheduler">
+          <div class="scheduler-cover cover">
+            <p class="project-title">Work Scheduler Project</p>
+          </div>
+        </div>
+        <div class="project radial">
+          <div class="radial-cover cover">
+            <p class="project-title">Radial Project</p>
+          </div>
+        </div>
+  </div>
+  <div id="footer"></div>
 
+  <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
