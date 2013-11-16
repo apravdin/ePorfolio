@@ -1,50 +1,106 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="jquery-2.0.3.min.js"></script>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
   <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-  <script>
-  var origin = location.protocol + '//' + location.hostname + '/';
-  $(function(){
-    $('#header').load(origin + "header.html");
-    $('#footer').load(origin + "footer.html");
-  });
-  </script>
+  <link href="css/fonts.css" rel="stylesheet" media="screen">
+  <link href="css/style.css" rel="stylesheet" media="screen">
   <style type="text/css">
-  #header .navbar-inner {
-    background-image: none;
-    background: rgba(0,0,0,0.5);
-    color:white;
-    border-width: 0;
+  .contact-page {
+    background: #93C5BD;
   }
-  .container-fluid {
-    padding-left:0;
-    padding-right:0;
+  .contact-strip {
+    height: 800px;
+    padding-top: 10%;
   }
-  .logo {
-    float:left;
-    margin-left: 40px;
+  .contact-strip input, .contact-strip textarea {
+    display: block;
+    width: 100%;
+    background: #DDDDDD;
+    border-radius: 2px;
+    height: 2.5em;
   }
-  #footer {
-    padding: 10px 50px;
-    text-align: center;
+  textarea.multi-line {
+    height: 10em;
   }
-  .nav.pull-right img {
-    transition: opacity 0.5s;
-    opacity: 0.5;
+  .contact-form {
+    width: 400px;
+    margin: 0 auto 0 auto;
   }
-  .nav.pull-right img:hover {
-    transition: opacity 0.5s;
+  .status {
+    opacity: 0;
+    color: green;
+  }
+  .status.visible {
     opacity: 1;
+    trasition: opacity 0.2s;
   }
   </style>
+  <script type="text/javascript">
+  function send_email() { 
+  }
+  </script>
 </head>
 <body>
 
-  <div id="header"></div>
-  <div>Content</div>
-  <div id="footer"></div>
+  <div id="header">
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="logo" href="index.html"><img src="img/logo.png" alt="Logo" height="62" width="62"></a>
+          <div class="nav-collapse collapse">
+            <ul class="nav pull-right">
+              <li class="projects"><a href="index.html#work-strip"><img src="img/work.png" alt="Projects" height="42" width="42"></a></li>
+              <li class="about"><a href="about.html"><img src="img/smiley.png" alt="About me" height="42" width="42"></a></li>
+              <li class="contact"><a href="contact.html"><img src="img/email.png" alt="Contact" height="42" width="42"></a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="logo" href="index.html"><img src="img/logo.png" alt="Logo" height="62" width="62"></a>
+          <div class="nav-collapse collapse">
+            <ul class="nav pull-right">
+              <li class="projects"><a href="index.html#work-strip"><img src="img/work.png" alt="Projects" height="42" width="42"></a></li>
+              <li class="about"><a href="about.html"><img src="img/smiley.png" alt="About me" height="42" width="42"></a></li>
+              <li class="contact"><a href="contact.html"><img src="img/email.png" alt="Contact" height="42" width="42"></a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div></div>
+    <div class="fluid-container contact-page">
+      <div class="contact-strip row-fluid">
+        <div class="contact-form">
+          <h1 class="title">Send me a message</h1>
+          <p class="subtitle">I always look forward to reading about new project ideas</p>
+          <form id="contact">
+            <input class="" type="text" name="name" placeholder="Name">
+            <input class="" type="text" name="email" placeholder="Email Address">
+            <textarea class=" multi-line" form="contact" type="text" name="body" placeholder="Your message..."></textarea>
+            <a class="custom-btn" onClick="send_email();$('.status').addClass('visible');" type="submit">Send</a><span class="status subtitle">Message has been sent</span>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div id="footer">
+      <p class="text-center copy-msg">&copy;2013 Anton Pravdin | antons.alternate@gmail.com</p>
+    </div>
 
-  <script src="js/bootstrap.min.js"></script>
-</body>
-</html>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+  </html>
